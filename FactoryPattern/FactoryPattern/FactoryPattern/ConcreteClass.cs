@@ -7,6 +7,6 @@ namespace FactoryPattern.FactoryPattern
 {
     public abstract class ConcreteClass
     {
-        public abstract IResolve Get();
+        public abstract IResolve Get(string value);
     }
 }

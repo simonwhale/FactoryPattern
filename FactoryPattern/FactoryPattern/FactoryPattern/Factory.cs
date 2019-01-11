@@ -7,9 +7,20 @@ namespace FactoryPattern.FactoryPattern
 {
     public class Factory : ConcreteClass
     {
-        public override IResolve Get()
+        public override IResolve Get(string value)
         {
-            throw new NotImplementedException();
+            IResolve mapper = null;
+            switch(value)
+            {
+                case "Hi":
+                    mapper =  new Resolvers.ResolverA();
+                    break;
+                case "Bye":
+                    mapper = new Resolvers.ResolverB();
+                    break;
+            }
+
+            return mapper;
         }
     }
 }
