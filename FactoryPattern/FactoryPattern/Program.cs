@@ -1,4 +1,8 @@
-﻿using System;
+﻿using FactoryPattern.FactoryPattern;
+using FactoryPattern.Interfaces;
+using FactoryPattern.Model;
+using FactoryPattern.Resolvers;
+using System;
 
 namespace FactoryPattern
 {
@@ -6,7 +10,15 @@ namespace FactoryPattern
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello World!");
+            ConcreteClass abstractFactory = new Factory();
+            IResolve mapA = abstractFactory.Get("Hi");
+            MyObject resolverA = mapA.Resolve();
+            Console.WriteLine(resolverA.ToString());
+
+            IResolve mapB = abstractFactory.Get("Bye");
+            MyObject resolverB = mapB.Resolve();
+            Console.WriteLine(resolverB);
+            Console.ReadLine();
         }
     }
 }

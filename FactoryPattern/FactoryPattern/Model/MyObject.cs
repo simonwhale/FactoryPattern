@@ -8,5 +8,10 @@ namespace FactoryPattern.Model
     {
         public int IdValue { get; set; }
         public string Name { get; set; }
+
+        public override string ToString()
+        {
+            return $"idValue: {IdValue}, Name: {Name}";
+        }
     }
 }
